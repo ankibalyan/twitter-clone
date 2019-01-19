@@ -26,10 +26,6 @@ async function verifyUser({ uname, pwd }) {
 
 async function findByHandle(uname, projection) {
   const user = await User.findOne({ uname });
-  console.log({
-    uname,
-    user
-  })
   if (!user || !user._id) {
     return false;
   }

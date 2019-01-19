@@ -7,10 +7,12 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: {
     type: String,
+    minlength: 3,
     required: true
   },
   uname: {
     type: String,
+    minlength: 3,
     unique: true,
     required: true,
     trim: true
@@ -37,6 +39,10 @@ const UserSchema = new Schema({
   },
   img: {
     type: String
+  },
+  aboutStatus: {
+    type: String,
+    maxlength: 250
   },
   followers: [{ type: Schema.ObjectId, ref: "User" }],
   following: [{ type: Schema.ObjectId, ref: "User" }],
