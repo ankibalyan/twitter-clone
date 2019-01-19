@@ -1,0 +1,132 @@
+.authWrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #515151;
+}
+
+.leftWrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: blueviolet;
+  color: #f1f1f1;
+}
+
+.rightWrapper {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 1rem;
+}
+
+.authWrapper ul, .authWrapper li {
+  list-style: none;
+}
+
+.authWrapper li {
+  line-height: 2.6;
+  font-size: 2rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formTitle {
+  position: absolute;
+  top: 3rem;
+  color: #717171;
+  font-size: 2rem;
+}
+
+.signupFields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  min-width: 25rem;
+}
+
+.formFields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: #f1f1f1;
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+}
+
+.signupFields .inputDiv {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.inputDiv {
+  margin-bottom: 5px;
+}
+
+
+.inputDiv input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #E1E1E1;
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 5px;
+}
+
+.authWrapper .submitWrapper {
+  width: 75%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  margin-top: 1.5rem;
+}
+
+.submitWrapper a {
+  color: blueviolet;
+  text-decoration: underline;
+}
+
+.submitWrapper div {
+  color: #A1A1A1;
+}
+
+.primary-btn {
+  padding: 5px 10px;
+  background: blueviolet;
+  color: #f1f1f1;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  display: inline;
+  cursor: pointer;
+}
