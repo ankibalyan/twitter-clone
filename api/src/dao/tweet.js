@@ -16,11 +16,11 @@ async function createTweet({ text, by }) {
 }
 
 async function likeTweet({ id, likedById }) {
-  return await Tweet.updateOne({ id }, { $addToSet: { likes: likedById } }, { new: true });
+  return await Tweet.findOneAndUpdate({ _id: id }, { $addToSet: { likes: likedById } }, { new: true });
 }
 
 async function findTweetsById(id) {
-  const tweets = await Tweet.find({ by: id }).sort({ ts: -1 });
+  const tweets = await Tweet.find({ by: id }).sort({ ts: -1 }).populate('by', { uname: 1, name: 1, img: 1 });
   return tweets;
 }
 
@@ -29,7 +29,7 @@ async function findTimelineTweets(id) {
 
   // include self tweets as well
   users.following.push(users._id);
-  return await Tweet.find({ by: users.following }).sort({ ts: -1 });;
+  return await Tweet.find({ by: users.following }).populate('by', { uname: 1, name: 1, img: 1 }).sort({ ts: -1 });;
 }
 
 

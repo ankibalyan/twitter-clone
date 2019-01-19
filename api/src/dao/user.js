@@ -33,8 +33,16 @@ async function findByHandle(uname, projection) {
   return user;
 }
 
+async function addFollower(from, to) {
+  const followedUser = await User.findOneAndUpdate({ uname: to }, { $addToSet: { followers: from } }, { new: true });
+  const followedByUser = await User.findOneAndUpdate({ _id: from }, { $addToSet: { following: followedUser._id } }, { new: true });
+
+  return followedUser
+}
+
 module.exports = {
   createUser,
   verifyUser,
-  findByHandle
+  findByHandle,
+  addFollower
 };

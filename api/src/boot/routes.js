@@ -12,6 +12,7 @@ const authMiddleware = require('../middlewares/auth');
 
 // routes
 const auth = require('../routes/auth');
+const user = require('../routes/user');
 const tweet = require('../routes/tweet');
 
 function sendOk(req, res) {
@@ -34,6 +35,7 @@ module.exports = function(app) {
 
     app.use(authMiddleware);
 
+    app.use('/user', user);
     app.use('/tweet', tweet);
 
     app.use(notFoundHandler);
